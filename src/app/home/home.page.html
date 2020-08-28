@@ -36,7 +36,7 @@
 
   <div #blocks class="blocks" [ngClass]="fixedBlocks() ? 'fixed' : null">
     <ion-card>
-      <ion-item class="ion-margin-vertical" lines="none">
+      <ion-item #swipeDown class="ion-margin-vertical" lines="none">
         <ion-icon slot="start" name="card-outline"></ion-icon>
         <ion-label>
           Cartão de crédito
@@ -108,7 +108,7 @@
         </ion-content>
 
 
-<ion-footer  [ngClass]="initialStep > 0 ? 'hidden' : null" class="ion-no-border">
+<ion-footer  [ngClass]="fixedBlocks() ? 'hidden' : null" class="ion-no-border">
   <ion-toolbar class="ion-no-margin ion-padding-vertical" color="primary">
     <ion-slides class="opacity-transition" [options]="slidesOptions">
       <ion-slide *ngFor="let option of options">
